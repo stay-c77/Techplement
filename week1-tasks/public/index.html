@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotivate</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body >
+    <div id = "div1">
+        <h2>&nbsp;&nbsp; Quotivate</h2>
+        <nav>
+            <a href = "#home">Quote of the Day</a>
+            <a href =  "#search">Search by author</a>
+        </nav>
+    </div>
+    <div class="section-wrapper">
+        <section id = "home" class="divsection" >
+            <div class = "content">
+                <h1 id = "quote-text">Loading quote...</h1>
+                <p id = "quote-author"></p>
+            </div>
+        </section>
+        <section id = "search" class="divsection" >
+            <div class = "content">
+                <h2>Search Quotes by Author</h2>
+                <div class="search-bar">
+                    <input type="text" id="author-input" placeholder="Enter author name" />
+                    <button id="search-btn" class="zoom">Search</button>
+                </div>
+                <div id="search-results"></div>
+            </div>
+        </section>
+    </div>
+    <div id = "div2">
+        <h3>Stacey Ann Sajan &nbsp;&nbsp;|&nbsp;&nbsp; IT@AJCE</h3>
+    </div>
+    <script src = "script.js"></script>
+</body>
+</html>

@@ -3,9 +3,13 @@ const fs = require('fs');
 const app = express();
 const PORT = 3000;
 const mysql = require('mysql2');
+const path = require('path');
+const cors = require('cors');
 require('dotenv').config();
 
 app.use(express.json());
+app.use(cors());
+app.use(express.static(path.join(__dirname, 'public')));
 
 const db = mysql.createConnection({
     host: process.env.DB_HOST,
@@ -21,14 +25,6 @@ db.connect(err => {
         console.log('Connected to MySQL');
     }
 });
-
-let quotes = [];
-try {
-    const data = fs.readFileSync('quotes.json', 'utf8');
-    quotes = JSON.parse(data);
-} catch (err) {
-    console.error('Failed to load quotes: ', err);
-}
 
 app.get('/api/random', (req, res) => {
     const query = `SELECT * FROM quotes ORDER BY RAND() LIMIT 1`;
